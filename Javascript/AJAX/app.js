@@ -10,15 +10,13 @@ function reqListener()  {
   console.log(this.status);
   const data = JSON.parse(this.responseText);
   renderVrewerirrw(data);
-}
-
+} // RegListener Hämtar du värdet ifrån.
 
 let oReg = new XMLHttpRequest();
 oReg.addEventListener("load",reqListener);
 oReg.open("GET","https://api.openbrewerydb.org/breweries");
 oReg.send();
 
- 
 function renderVrewerirrw(ar)  {
   const tbodyEl = document.querySelector("tbody");
   for(let i = 0; i < ar.length; i += 1)  {
